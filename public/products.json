@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Auriculares Bluetooth Sony WH-1000XM4",
+    "descripcion": "Auriculares con cancelación de ruido activa, micrófono y batería de 30 horas.",
+    "precio": 299.99,
+    "categoria": "auriculares",
+    "imagen": "https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SL1500_.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Smartphone Samsung Galaxy S22",
+    "descripcion": "Pantalla AMOLED de 6.1'', cámara triple, 128 GB de almacenamiento.",
+    "precio": 749.99,
+    "categoria": "smartphones",
+    "imagen": "https://m.media-amazon.com/images/I/81kfA-GtWwL._AC_SL1500_.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Laptop HP Pavilion 15",
+    "descripcion": "Intel Core i7, 16 GB RAM, 512 GB SSD, pantalla FHD de 15.6''.",
+    "precio": 849.0,
+    "categoria": "laptops",
+    "imagen": "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_SL1500_.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Smartwatch Apple Watch Series 9",
+    "descripcion": "GPS, 45mm, monitor cardíaco, resistente al agua.",
+    "precio": 399.0,
+    "categoria": "smartwatches",
+    "imagen": "https://m.media-amazon.com/images/I/71vFKBpKakL._AC_SL1500_.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Tablet Apple iPad Air (5ª generación)",
+    "descripcion": "Pantalla de 10.9'', chip M1, 64 GB, Wi-Fi.",
+    "precio": 599.0,
+    "categoria": "tablets",
+    "imagen": "https://m.media-amazon.com/images/I/61XZQXFQeVL._AC_SL1500_.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Cámara Sony Alpha a6400",
+    "descripcion": "Mirrorless con lente intercambiable, video 4K, pantalla táctil.",
+    "precio": 998.0,
+    "categoria": "cámaras",
+    "imagen": "https://m.media-amazon.com/images/I/81W+3k4U6yL._AC_SL1500_.jpg"
+  }
+]
