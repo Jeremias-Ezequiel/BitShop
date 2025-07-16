@@ -42,6 +42,11 @@ const Navbar = () => {
                   <Link to="/contacto">Contacto</Link>
                 </a>
               </li>
+              <li>
+                <a>
+                  <Link to="/login">Iniciar sesion</Link>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
