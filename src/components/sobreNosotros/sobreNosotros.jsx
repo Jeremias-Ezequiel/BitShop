@@ -18,7 +18,7 @@ function SobreNosotros() {
             producto que encuentras en nuestra tienda ha sido seleccionado
             cuidadosamente para garantizar que tengas lo último en tecnología.
           </p>
-          <a href="productos" class="btn btn-primary mt-3">
+          <a href="/productos" class="btn btn-primary mt-3">
             Explora Nuestra Tienda
           </a>
         </div>
