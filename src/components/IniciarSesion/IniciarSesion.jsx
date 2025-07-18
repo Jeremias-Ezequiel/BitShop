@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext"; // Ajusta la ruta según tu estructura
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function IniciarSesion() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState([]);
   const { login } = useContext(AuthContext);
@@ -16,18 +16,13 @@ function Login() {
   const validateForm = () => {
     const newErrors = [];
 
-    // Excepción para el administrador
-    if (formData.email === "admin" && formData.password === "admin") {
-      return newErrors.length === 0;
-    }
-
-    // Validar correo electrónico (solo para usuarios no admin)
+    // Validar correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       newErrors.push("Por favor, ingresa un correo electrónico válido.");
     }
 
-    // Validar contraseña (solo para usuarios no admin)
+    // Validar contraseña (mínimo 8 caracteres, al menos una letra y un número)
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordRegex.test(formData.password)) {
       newErrors.push(
@@ -43,19 +38,19 @@ function Login() {
     e.preventDefault();
     if (validateForm()) {
       try {
+        // Simular llamada al backend (reemplaza con tu API real)
+        // Ejemplo: const response = await fetch("/api/login", { ... });
+        // const data = await response.json();
+        // Suponemos que la API devuelve { email, name }
         const userData = {
           email: formData.email,
-          password: formData.password,
-          name:
-            formData.email === "admin"
-              ? "Administrador"
-              : formData.email.split("@")[0],
+          name: formData.email.split("@")[0], // Usar la parte antes de @ como nombre por defecto
         };
-        login(userData);
+        login(userData); // Actualizar el estado de autenticación
         alert("Inicio de sesión exitoso. ¡Bienvenido!");
         setFormData({ email: "", password: "" });
         setErrors([]);
-        navigate(userData.email === "admin" ? "/dashboard" : "/");
+        navigate("/");
       } catch (err) {
         setErrors(["Error al iniciar sesión. Verifica tus credenciales."]);
       }
@@ -137,4 +132,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default IniciarSesion;
