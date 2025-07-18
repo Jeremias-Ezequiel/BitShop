@@ -1,12 +1,33 @@
-# React + Vite
+# ¡Bienvenido a BitShop!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hola a todos! Este es el proyecto de BitShop, una tienda desarrollada con React y bootstrap para mejorar mis habilidades en react y el desarrollo web. El proyecto consiste en una pagina donde las personas puedan registrarse, ver y comprar productos electronicos. Todavia sigue en proceso, pero ya tiene varias cosas interesantes.
 
-Currently, two official plugins are available:
+## ¿Que tiene BitShop?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Productos: Podes ver una lista de productos con fotos, precios y descripciones. Uso una API mock para traer los datos (`https://68798eb663f24f1fdca2463f.mockapi.io/productos/Productos`).
+Carrito: Si te logueas, podes agregar productos al carrito y verlos en una seccion especial
+Login: Hay una pantalla para iniciar sesion
+Busqueda y Paginacion: agregue una barra de busqueda para filtrar productos por nombre y un paginador para navegar por paginas
+Diseño: Uso Bootstrap para que se vea bien y responsive
 
-## Expanding the ESLint configuration
+## Como empezar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clona el repositorio: git clone `https://github.com/Jeremias-Ezequiel/BitShop.git`
+Instala las dependencias: `npm install`
+Arranca el proyecto: `npm run dev`
+Abrí el navegador en `http://localhost:5173` y ya podras ver el proyecto
+
+## Tecnologias usadas
+
+React: Para la estructura y los componentes.
+React Router: Para manejar las rutas de la pagina.
+Bootstrap: Para los estilos y el diseño.
+Context API: Para manejar el estado del usuario y el carrito.
+MockAPI: Para simular una base de datos de productos.
+
+## Cosas por mejorar
+
+Arreglar el carrito que a veces no carga bien (estoy debuggeando eso).
+Agregar mas funcionalidades al dashboard, como reportes o filtros.
+Hacer que el login sea mas seguro (por ahora es basico).
+Probar con una API real en vez de la mock.
