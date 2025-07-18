@@ -8,3 +8,8 @@
   padding: 18px;
   border-radius: 75px;
 }
+
+.categoria-item a {
+  color: white !important;
+  text-decoration: none !important;
+}

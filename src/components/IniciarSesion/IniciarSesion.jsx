@@ -61,7 +61,8 @@ function IniciarSesion() {
     <section id="login" className="container my-5">
       <h2 className="text-center mb-4">Iniciar Sesión</h2>
       <p className="text-center mb-5">
-        Ingresa tus datos para acceder a tu cuenta de BitShop.
+        Ingresa tus datos para acceder a tu cuenta de BitShop, y poder ver y
+        gestionar el carrito
       </p>
       <div className="row justify-content-center">
         <div className="col-md-6">
