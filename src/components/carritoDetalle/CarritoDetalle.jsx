@@ -6,20 +6,17 @@ function CarritoDetalle() {
   const [showModal, setShowModal] = useState(false);
   const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
 
-  // Calcular el total general, asegurando que precio sea un número
   const total = cart.reduce(
     (sum, item) => sum + parseFloat(item.precio) * item.quantity,
     0
   );
 
-  // Manejar la confirmación de la compra
   const handleConfirmPurchase = () => {
     setPurchaseConfirmed(true);
-    setCart([]); // Limpiar el carrito
-    localStorage.removeItem("cart"); // Limpiar localStorage
+    setCart([]);
+    localStorage.removeItem("cart");
   };
 
-  // Cerrar el modal
   const handleCloseModal = () => {
     setShowModal(false);
     setPurchaseConfirmed(false);
@@ -77,8 +74,6 @@ function CarritoDetalle() {
           </div>
         </>
       )}
-
-      {/* Modal para el resumen de la compra */}
       <div
         className={`modal fade ${showModal ? "show d-block" : ""}`}
         tabIndex="-1"
