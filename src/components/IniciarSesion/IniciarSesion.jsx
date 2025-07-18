@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext"; // Ajusta la ruta según tu estructura
 import { useNavigate } from "react-router-dom";
 
 function IniciarSesion() {
@@ -34,14 +34,26 @@ function IniciarSesion() {
     return newErrors.length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      login({ email: formData.email });
-      alert("Inicio de sesión exitoso. ¡Bienvenido!");
-      setFormData({ email: "", password: "" });
-      setErrors([]);
-      navigate("/");
+      try {
+        // Simular llamada al backend (reemplaza con tu API real)
+        // Ejemplo: const response = await fetch("/api/login", { ... });
+        // const data = await response.json();
+        // Suponemos que la API devuelve { email, name }
+        const userData = {
+          email: formData.email,
+          name: formData.email.split("@")[0], // Usar la parte antes de @ como nombre por defecto
+        };
+        login(userData); // Actualizar el estado de autenticación
+        alert("Inicio de sesión exitoso. ¡Bienvenido!");
+        setFormData({ email: "", password: "" });
+        setErrors([]);
+        navigate("/");
+      } catch (err) {
+        setErrors(["Error al iniciar sesión. Verifica tus credenciales."]);
+      }
     }
   };
 

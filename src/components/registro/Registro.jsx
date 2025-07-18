@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext"; // Ajusta la ruta según tu estructura
 import { useNavigate } from "react-router-dom";
 
 function Registro() {
@@ -21,6 +21,7 @@ function Registro() {
   const validateForm = () => {
     const newErrors = [];
 
+    // Validar nombre (solo letras y espacios, mínimo 2 caracteres)
     const nameRegex = /^[A-Za-z\s]{2,}$/;
     if (!nameRegex.test(formData.name)) {
       newErrors.push(
@@ -28,11 +29,13 @@ function Registro() {
       );
     }
 
+    // Validar correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       newErrors.push("Por favor, ingresa un correo electrónico válido.");
     }
 
+    // Validar contraseña (mínimo 8 caracteres, al menos una letra y un número)
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordRegex.test(formData.password)) {
       newErrors.push(
@@ -40,6 +43,7 @@ function Registro() {
       );
     }
 
+    // Validar confirmación de contraseña
     if (formData.password !== formData.confirmPassword) {
       newErrors.push("Las contraseñas no coinciden.");
     }
@@ -48,14 +52,25 @@ function Registro() {
     return newErrors.length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      login({ email: formData.email });
-      alert("Registro exitoso. ¡Bienvenido a BitShop!");
-      setFormData({ name: "", email: "", password: "", confirmPassword: "" });
-      setErrors([]);
-      navigate("/"); // Redirigir al inicio
+      try {
+        // Simular registro (reemplaza con tu API real)
+        // Ejemplo: const response = await fetch("/api/register", { ... });
+        // const data = await response.json();
+        const userData = {
+          email: formData.email,
+          name: formData.name, // Usar el nombre del formulario
+        };
+        login(userData); // Actualizar el estado de autenticación
+        alert("Registro exitoso. ¡Bienvenido a BitShop!");
+        setFormData({ name: "", email: "", password: "", confirmPassword: "" });
+        setErrors([]);
+        navigate("/");
+      } catch (err) {
+        setErrors(["Error al registrarse. Intenta de nuevo."]);
+      }
     }
   };
 
