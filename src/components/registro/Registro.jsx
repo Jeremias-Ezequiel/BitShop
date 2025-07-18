@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "./AuthContext"; // Importar el contexto de autenticación
+import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Registro() {
@@ -10,7 +10,7 @@ function Registro() {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState([]);
-  const { login } = useContext(AuthContext); // Usar el contexto para manejar login tras registro
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -21,7 +21,6 @@ function Registro() {
   const validateForm = () => {
     const newErrors = [];
 
-    // Validar nombre (solo letras y espacios, mínimo 2 caracteres)
     const nameRegex = /^[A-Za-z\s]{2,}$/;
     if (!nameRegex.test(formData.name)) {
       newErrors.push(
@@ -29,13 +28,11 @@ function Registro() {
       );
     }
 
-    // Validar correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       newErrors.push("Por favor, ingresa un correo electrónico válido.");
     }
 
-    // Validar contraseña (mínimo 8 caracteres, al menos una letra y un número)
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordRegex.test(formData.password)) {
       newErrors.push(
@@ -43,7 +40,6 @@ function Registro() {
       );
     }
 
-    // Validar confirmación de contraseña
     if (formData.password !== formData.confirmPassword) {
       newErrors.push("Las contraseñas no coinciden.");
     }
@@ -55,8 +51,7 @@ function Registro() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Simular registro (reemplazar con llamada al backend)
-      login({ email: formData.email }); // Actualizar el estado de autenticación
+      login({ email: formData.email });
       alert("Registro exitoso. ¡Bienvenido a BitShop!");
       setFormData({ name: "", email: "", password: "", confirmPassword: "" });
       setErrors([]);

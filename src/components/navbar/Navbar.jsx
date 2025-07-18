@@ -4,7 +4,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary p-3 fs-4 fw-medium">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary p-3 fs-5 fw-medium">
         <div className="container-fluid">
           <a className="navbar-brand fs-2">
             <Link to="/">BitShop</Link>
@@ -42,9 +42,19 @@ const Navbar = () => {
                   <Link to="/contacto">Contacto</Link>
                 </a>
               </li>
-              <li>
-                <a>
+              <li className="nav-item">
+                <a className="nav-link">
                   <Link to="/login">Iniciar sesion</Link>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link">
+                  <Link to="/registro">Registrarse</Link>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link">
+                  <Link to="/carrito">Carrito</Link>
                 </a>
               </li>
             </ul>

@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./Producto.css";
 
-function Producto({ nombre, imagen, descripcion, precio }) {
+function Producto({ nombre, imagen, descripcion, precio, id }) {
   return (
     <div className="card producto-card" style={{ width: "18rem" }}>
       <img src={imagen} className="card-img-top img-fluid" alt="..." />
@@ -9,7 +10,7 @@ function Producto({ nombre, imagen, descripcion, precio }) {
         <p className="card-text flex-grow-1">{descripcion}</p>
         <p>${precio}</p>
         <a href="#" className="btn btn-primary d-block">
-          Ver más
+          <Link to={`/productos/${id}`}>Ver detalles</Link>
         </a>
       </div>
     </div>

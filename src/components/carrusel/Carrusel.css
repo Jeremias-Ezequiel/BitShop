@@ -1,6 +1,5 @@
-/* Estilos base para todas las pantallas */
 .carousel-inner {
-  max-height: 400px; /* Altura por defecto para móviles/tablets */
+  max-height: 400px;
   overflow: hidden;
 }
 
@@ -10,16 +9,14 @@
   height: 100%;
 }
 
-/* Media query para pantallas desktop (992px en adelante) */
 @media (min-width: 992px) {
   .carousel-inner {
-    max-height: 500px; /* Altura reducida para desktop */
+    max-height: 500px;
   }
 }
 
-/* Opcional: Ajustes para pantallas muy grandes */
 @media (min-width: 1200px) {
   .carousel-inner {
-    max-height: 600px; /* Puedes ajustar este valor según necesites */
+    max-height: 600px;
   }
 }

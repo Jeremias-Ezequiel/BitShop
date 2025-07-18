@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../../context/AuthContext"; // Importar el contexto de autenticación
+import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function IniciarSesion() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState([]);
-  const { login } = useContext(AuthContext); // Usar el contexto para manejar login
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -37,12 +37,11 @@ function IniciarSesion() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Simular autenticación (reemplazar con llamada al backend)
-      login({ email: formData.email }); // Actualizar el estado de autenticación
+      login({ email: formData.email });
       alert("Inicio de sesión exitoso. ¡Bienvenido!");
       setFormData({ email: "", password: "" });
       setErrors([]);
-      navigate("/"); // Redirigir al inicio
+      navigate("/");
     }
   };
 
@@ -113,7 +112,7 @@ function IniciarSesion() {
             </button>
           </form>
           <p className="text-center mt-3">
-            ¿No tienes cuenta? <a href="/register">Regístrate aquí</a>
+            ¿No tienes cuenta? <a href="/registro">Regístrate aquí</a>
           </p>
         </div>
       </div>

@@ -6,11 +6,11 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // null = no autenticado, objeto = autenticado
 
   const login = (userData) => {
-    setUser(userData); // Guardar datos del usuario (simulado)
+    setUser(userData);
   };
 
   const logout = () => {
-    setUser(null); // Cerrar sesión
+    setUser(null);
   };
 
   return (

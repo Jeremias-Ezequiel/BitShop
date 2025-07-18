@@ -1,7 +1,12 @@
 import React from "react";
+import Registro from "../components/registro/Registro";
 
 function SignUp() {
-  return <div>SignUp</div>;
+  return (
+    <>
+      <Registro />
+    </>
+  );
 }
 
 export default SignUp;

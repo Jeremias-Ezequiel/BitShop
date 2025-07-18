@@ -8,7 +8,7 @@ function NuestrosProductos() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://686bb363e559eba90873aee6.mockapi.io/productos")
+    fetch("https://68798eb663f24f1fdca2463f.mockapi.io/productos/Productos")
       .then((response) => response.json())
       .then((data) => setProductos(data))
       .catch((error) => setError("No se pudieron cargar los productos"))
@@ -31,6 +31,7 @@ function NuestrosProductos() {
               descripcion={item.descripcion}
               imagen={item.imagen}
               precio={item.precio}
+              id={item.id}
             />
           ))}
         </div>
