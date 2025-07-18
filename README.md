@@ -5,7 +5,7 @@ Hola a todos! Este es el proyecto de BitShop, una tienda desarrollada con React 
 ## ¿Que tiene BitShop?
 
 - Productos: Podes ver una lista de productos con fotos, precios y descripciones. Uso una API mock para traer los datos (`https://68798eb663f24f1fdca2463f.mockapi.io/productos/Productos`).
-- Carrito: Si te logueas, podes agregar productos al carrito y verlos en una seccion especial
+- Carrito: Deberas iniciar sesion para poder ingresar al carrito, podes agregar productos al carrito y verlos en una seccion especial
 - Login: Hay una pantalla para iniciar sesion
 - Busqueda y Paginacion: agregue una barra de busqueda para filtrar productos por nombre y un paginador para navegar por paginas
 - Diseño: Uso Bootstrap para que se vea bien y responsive
